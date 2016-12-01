@@ -384,12 +384,21 @@ limitations under the License.
           <div class="title">products</div>
           <div class="description">all our products are grown under the sun. <br /> yielding the highest quality, taste and performance.</div>
         </div>
-        <div class="section section_map" id="map"></div>
+        <div class="section section_map">
+          <div id="map"></div>
+          <div class="place off">
+            <div class="inner"><img class="image off"><a class="name" target="_new"></a>
+              <div class="address"></div>
+              <div class="phone"></div>
+            </div>
+            <div class="close">Close</div>
+          </div>
+        </div>
         <script>Index.i();</script>
       </div>
     </div>
     <footer></footer>
   </body>
   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIq84pji4ovumANXXolMqkGwQX8kM1mKc&amp;callback=Map.i" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIq84pji4ovumANXXolMqkGwQX8kM1mKc&amp;callback=Map.i&amp;libraries=places" async defer></script>
 </html>
