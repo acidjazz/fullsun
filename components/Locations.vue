@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 const jsonp = require('jsonp')
 export default {
 
@@ -50,11 +49,9 @@ export default {
 
   mounted () {
 
-    if (this.loaded === false) {
-
+    if (window.google === undefined) {
       jsonp(this.url, null, () => {
 
-        this.loaded = true
         this.vendors = require('~/copy/vendors.json')
 
         this.map = new window.google.maps.Map(document.getElementById('map'), {
@@ -267,6 +264,4 @@ json('../static/fonts.json')
       font h2
       left 50%
       margin-left -10px
-
-
 </style>
