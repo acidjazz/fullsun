@@ -53,7 +53,6 @@ export default {
   mounted () {
 
     this.$ = window.$
-
     if (this.$(window).width() < 1000) {
       this.offset = 0
     }

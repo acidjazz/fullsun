@@ -1,0 +1,156 @@
+[
+  {
+    "name": "anvil tee",
+    "title": "Anvil Tee Shirt",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    ],
+    "thumb": "anvil_tee_thumb.jpg",
+    "image": "anvil_tee_grey.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL"
+      },
+      {
+        "left": "colors",
+        "right": "green, black, blue"
+      }
+    ],
+    "versions": [
+      {
+        "color": "grey",
+        "image": "anvil_tee_grey.jpg"
+      },
+      {
+        "color": "black",
+        "image": "anvil_tee_black.jpg"
+      }
+    ]
+  },
+  {
+    "name": "cropped tee",
+    "title": "Cropped Tee Shirt",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    ],
+    "thumb": "cropped_tee_thumb.jpg",
+    "image": "cropped_tee.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL"
+      },
+      {
+        "left": "colors",
+        "right": "green, black, blue"
+      }
+    ]
+  },
+  {
+    "name": "bag",
+    "title": "Drawstring Bag",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    ],
+    "thumb": "bag_thumb.jpg",
+    "image": "bag.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL"
+      },
+      {
+        "left": "colors",
+        "right": "green, black, blue"
+      }
+    ]
+  },
+  {
+    "name": "hat",
+    "title": "Blue Hat",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    ],
+    "thumb": "hat_thumb.jpg",
+    "image": "hat.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL"
+      },
+      {
+        "left": "colors",
+        "right": "green, black, blue"
+      }
+    ]
+  },
+  {
+    "name": "leggings",
+    "title": "Black Leggings",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    ],
+    "thumb": "leggings_thumb.jpg",
+    "image": "leggings.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL"
+      },
+      {
+        "left": "colors",
+        "right": "green, black, blue"
+      }
+    ]
+  },
+  {
+    "name": "racerback",
+    "ecwid": 88316723,
+    "title": "California Conscious",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    ],
+    "thumb": "racerback_thumb.jpg",
+    "image": "racerback_front.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL"
+      },
+      {
+        "left": "colors",
+        "right": "green, black, blue"
+      }
+    ],
+    "versions": [
+      {
+        "color": "grey",
+        "image": "racerback_front.jpg"
+      },
+      {
+        "color": "black",
+        "image": "racerback_back.jpg"
+      }
+    ]
+  },
+  {
+    "name": "hoodie",
+    "title": "Zip Hoodie",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    ],
+    "thumb": "ziphoodie_thumb.jpg",
+    "image": "ziphoodie.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL"
+      },
+      {
+        "left": "colors",
+        "right": "green, black, blue"
+      }
+    ]
+  }
+]

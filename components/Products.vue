@@ -1,10 +1,25 @@
 <template lang="pug">
 .section.section_products#products
+
   .title products
   .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
 
   .productlist
-    .product(v-for="product, index in products",@click="selected = product")
+    .product(v-for="product, index in products",@click="select(product)")
+      .image
+        .overlay
+        .inner(:style="'background-image: url(/images/products/' + product.thumb + ')'")
+      .name {{ product.name }}
+      .title {{ product.title }}
+
+  .clear
+  .clear
+
+  .title apparel
+  .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
+
+  .productlist
+    .product(v-for="product, index in apparel",@click="select(product)")
       .image
         .overlay
         .inner(:style="'background-image: url(/images/products/' + product.thumb + ')'")
@@ -61,12 +76,33 @@ export default {
 
   created () {
     this.products = require('~/copy/products.json')
+    this.apparel = require('~/copy/apparel.json')
   },
 
+  methods: {
+    select (product) {
+
+      this.$('html, body').scrollTo('#products', {
+        duration: 200,
+        offset: this.offset,
+      })
+      location.hash = 'products'
+
+      this.selected = product
+    }
+  },
+
+  mounted () {
+    this.$ = window.$
+    if (this.$(window).width() < 1000) {
+      this.offset = 0
+    }
+  },
   data () {
     return {
       // products: require('~/copy/products.json')
       products: {},
+      offset: -86,
       selected: false,
       selectedF: false,
     }
@@ -95,14 +131,16 @@ json('../static/fonts.json')
     width 50%
     height 100%
     background-color springWood
+
 .section_products
   min-height calc(100vh - 86px)
-  height auto
+  height 1500px
   > .title
     font h1
     text-align center
     color tiffanyBlue
     padding 50px 0 25px 0
+    clear both
   > .description
     font c4
     text-align center
@@ -114,6 +152,7 @@ json('../static/fonts.json')
   > .productlist
     width 980px
     margin auto
+    clear both
     > .product
       float left
       width 225px
@@ -199,9 +238,9 @@ json('../static/fonts.json')
         height 50px
         width 50px
         text-align center
-        position absolute
+        position fixed
         bottom 20px
-        left 0
+        left 50%
         margin-left -25px
         font h1
         color tiffanyBlue
