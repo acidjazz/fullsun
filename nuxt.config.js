@@ -14,7 +14,6 @@ module.exports = {
       { src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" },
       { src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js" },
       { src: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js" },
-      // { src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAIq84pji4ovumANXXolMqkGwQX8kM1mKc&callback=Map.i&libraries=places" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

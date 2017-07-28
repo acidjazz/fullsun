@@ -1,5 +1,9 @@
 <template lang="pug">
+doctype
 .section.section_products#products
+  script(
+    src="https://app.ecwid.com/script.js?11806046&data_platform=singleproduct_v2",
+    charset="utf-8")
 
   .title products
   .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
@@ -68,6 +72,16 @@
               .left {{ detail.left }}
               .right {{ detail.right }}
             .clear
+      .ecwid.ecwid-SingleProduct-v2.ecwid-Product.ecwid-Product-88316723(
+        itemscope,
+        itemtype="http://schema.org/Product",
+        data-single-product-id="88316723",
+        v-if="product.ecwid !== undefined",
+      )
+        div(customprop="addtobag")
+      script(v-if="product.ecwid !== undefined").
+        xProduct()
+
 
 </template>
 
