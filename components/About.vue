@@ -8,9 +8,6 @@
       p Lastly, we are the rays of sunshine that spill down upon the mountaintop — the bright and most powerful source that enriches all of our cannabis at Full Sun.  
 </template>
 
-<script>
-</script>
-
 <style lang="stylus">
 
 json('../static/colors.json')

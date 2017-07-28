@@ -1,6 +1,6 @@
 <template lang="pug">
 #Top
-  .burger.on
+  .burger(:class="{ on: !menu, off: menu }",@click="menu = !menu")
     .lines
       span
       span
@@ -14,7 +14,7 @@
         .svg
           include ../static/vector/logos.svg
     .menu
-      .items.off
+      .items(:class="{ on: menu, off: !menu }")
         .inner
           .item.item_products(data-item='products',@click="section('products')") products
           .item.item_locations(data-item='locations',@click="section('locations')") locations
@@ -40,6 +40,7 @@ export default {
 
     section (section) {
       setTimeout(() => {
+        this.menu = false
         this.$('html, body').scrollTo('#' + section, {
           duration: 500,
           offset: this.offset,
@@ -63,14 +64,18 @@ export default {
     return {
       $: {},
       offset: -86,
+      menu: false,
     }
   }
 }
 </script>
 
 <style lang="stylus">
+
 json('../static/colors.json')
 json('../static/fonts.json')
+@import '../assets/stylus/mixins.styl'
+
 #Top
   width 100%
   height 86px
@@ -162,9 +167,54 @@ json('../static/fonts.json')
           > svg
             > path, > circle
               fill white
+.burger
+  position fixed
+  top 20px
+  left 20px
+  clear both
+  width 40px
+  height 40px
+  z-index 150
+  &.off > .lines > span
+    background-color tiffanyBlue
+  &.off > .lines > span:nth-child(1)
+    top 18px
+    width 0%
+    left 50%
+  &.off > .lines > span:nth-child(2)
+    transform rotate(45deg)
+  &.off > .lines > span:nth-child(3)
+    transform rotate(-45deg)
+  &.off > .lines > span:nth-child(4)
+    top 18px
+    width 0%
+    left 50%
 
- @media all and (min-width: 1px) and (max-width: 1000px)
-  header
+  > .lines
+    position relative
+    width 100%
+    height 100%
+    > span
+      display block
+      position absolute
+      height 3px
+      border-radius 9px
+      width 100%
+      background-color tiffanyBlue
+      opacity 1
+      left 0
+      transition 0.25s ease-in-out
+      &:nth-child(1)
+        top 0px
+      &:nth-child(2),
+      &:nth-child(3)
+        top 14px
+      &:nth-child(4)
+        top 28px
+
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  #Top
     background-color rgba(0,0,0,0) !important
     &.filled
       background-color rgba(0,0,0,0) !important
