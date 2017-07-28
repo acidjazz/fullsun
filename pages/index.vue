@@ -5,6 +5,7 @@
   Rise
   Banner
   Products
+  Locations
   Footer
 </template>
 
@@ -14,9 +15,10 @@ import Landing from '~/components/Landing.vue'
 import Rise from '~/components/Rise.vue'
 import Banner from '~/components/Banner.vue'
 import Products from '~/components/Products.vue'
+import Locations from '~/components/Locations.vue'
 // import Footer from '~/components/Footer.vue'
 export default {
-  components: { Top, Landing, Rise, Banner, Products }
+  components: { Top, Landing, Rise, Banner, Products, Locations }
 }
 </script>
 
