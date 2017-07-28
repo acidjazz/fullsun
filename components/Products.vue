@@ -1,7 +1,7 @@
 <template lang="pug">
 doctype
 .section.section_products#products
-  script(
+  // script(
     src="https://app.ecwid.com/script.js?11806046&data_platform=singleproduct_v2",
     charset="utf-8")
 
@@ -72,20 +72,24 @@ doctype
               .left {{ detail.left }}
               .right {{ detail.right }}
             .clear
-      .ecwid.ecwid-SingleProduct-v2.ecwid-Product.ecwid-Product-88316723(
-        itemscope,
-        itemtype="http://schema.org/Product",
-        data-single-product-id="88316723",
-        v-if="product.ecwid !== undefined",
-      )
-        div(customprop="addtobag")
-      script(v-if="product.ecwid !== undefined").
-        xProduct()
 
 
+          script(
+            data-selz-t='_selz-btn-default',
+            data-selz-b='http://selz.co/VyxqIJVIm',
+            data-text='Buy it now',
+            data-selz-a='modal').
+
+            var _$elz = {};
+            _$elz.b = { e: document.createElement("script") };
+            _$elz.b.e.src = "https://selz.com/embed/button"; document.body.appendChild(_$elz.b.e);
+
+          noscript
+            a(href='http://selz.co/VyxqIJVIm', target='_blank') Buy it now
 </template>
 
 <script>
+
 export default {
 
   created () {
@@ -336,6 +340,11 @@ json('../static/fonts.json')
                 float left
               > .right
                 float right
+          > a.selz-button
+            padding 30px 0 0 0
+            .selz-button__label
+              background-color seaBuckthorn !important
+              border-color seaBuckthorn !important
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   .section_products
