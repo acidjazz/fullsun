@@ -1,0 +1,42 @@
+
+json('../../static/colors.json')
+json('../../static/fonts.json')
+
+@import '../../assets/stylus/mixins.styl'
+
+fontlist = regular
+fontfaces(aquilone, fontlist, otf)
+fontlist = bold regular light
+fontfaces(averta, fontlist, otf)
+fontlist = gothic
+fontfaces(sackers, fontlist, otf)
+
+body
+  padding 0
+  margin 0
+  background-color springWood
+  font c1
+
+.hashtag
+  color tiffanyBlue
+  font c5
+
+.section
+  height calc(100vh - 85px)
+  background-color springWood
+  position relative
+  z-index 15
+
+.section_banner
+  height 800px
+  background-image url('/images/scapes/6.jpg')
+  background-size cover
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .section
+    height 100vh
+  .section_rise
+    height auto
+    > .inner
+      width 80%
+
