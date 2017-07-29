@@ -1,29 +1,28 @@
 <template lang="pug">
-doctype
-.section.section_products#products
-  // script(
-    src="https://app.ecwid.com/script.js?11806046&data_platform=singleproduct_v2",
-    charset="utf-8")
+.section.section_products#products(:class="{ half: !apparelF, full: apparelF }")
 
-  .title products
-  .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
+  .subsection.subsection_products
+    .title products
+    .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
 
-  .productlist
-    a.product(v-for="product, index in products",@click="select(product)")
-      .image
-        .inner(:style="'background-image: url(/images/products/' + product.thumb + ')'")
-      .name {{ product.name }}
-      .title {{ product.title }}
+    .productlist
+      a.product(v-for="product, index in products",@click="select(product)")
+        img(:src="'/images/products/' + product.thumb ")
+        .name {{ product.name }}
+        .title {{ product.title }}
+      a.product(@click="apparelF = !apparelF")
+        img(src="/images/products/anvil_tee_thumb.jpg")
+        .name apparel
+        .title Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
 
-  .title apparel
-  .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
+  .subsection.subsection_apparel(:class="{on: apparelF, off: !apparelF}")
+    .title apparel
 
-  .productlist
-    a.product(v-for="product, index in apparel",@click="select(product)")
-      .image
-        .inner(:style="'background-image: url(/images/products/' + product.thumb + ')'")
-      .name {{ product.name }}
-      .title {{ product.title }}
+    .productlist
+      a.product(v-for="product, index in apparel",@click="select(product)")
+        img(:src="'/images/products/' + product.thumb ")
+        .name {{ product.name }}
+        .title {{ product.title }}
 
   .backdrop(:class="{ on: this.selected !== false, off: this.selected === false}")
     .left
@@ -92,8 +91,8 @@ export default {
   },
 
   methods: {
-    select (product) {
 
+    select (product) {
       this.$('html, body').scrollTo('#products', {
         duration: 200,
         offset: this.offset,
@@ -112,11 +111,11 @@ export default {
   },
   data () {
     return {
-      // products: require('~/copy/products.json')
       products: {},
       offset: -86,
       selected: false,
       selectedF: false,
+      apparelF: false,
     }
   },
 
@@ -127,6 +126,7 @@ export default {
 json('../static/colors.json')
 json('../static/fonts.json')
 @import '../assets/stylus/mixins.styl'
+@import '../assets/stylus/keyframes.styl'
 
 .backdrop
   background-color white
@@ -145,47 +145,57 @@ json('../static/fonts.json')
     background-color springWood
 
 .section_products
-  min-height calc(100vh - 86px)
-  height 1500px
-  > .title
-    font h1
-    text-align center
-    color tiffanyBlue
-    padding 50px 0 25px 0
-    clear both
-  > .description
-    font c4
-    text-align center
-    color orange3
-    line-height 30px
-    padding 0 0 50px 0
-    max-width 860px
-    margin auto
-  > .productlist
-    width 980px
-    margin auto
-    border 1px solid red
-    > .product
-      display inline-block
-      width 180px
-      height 340px
+  height 700px
+  &.half
+    height 700px
+  &.full
+    height 1500px
+    transition height 0.5s ease-in-out 0s
+  > .subsection
+    onoff()
+    animation fadeIn 1s ease-in-out 0.2s both
+    > .title
+      font h1
       text-align center
       color tiffanyBlue
-      transition color 0.2s linear
-      > .image
-        width 100%
-        height auto
-        box-shadow 0 1px 10px rgba(0, 0, 0, 0.1);
-        position relative
-        > .inner
-          background-size cover
-          background-position 10%
-          height 225px
-      > .title
-        font c1s
-      > .name
-        font h2
-        padding 20px 0 10px 0
+      padding 50px 0 25px 0
+      clear both
+    > .description
+      font c4
+      text-align center
+      color orange3
+      line-height 30px
+      padding 0 0 50px 0
+      max-width 860px
+      margin auto
+    > .productlist
+      text-align center
+      width 980px
+      margin 0 auto 30px auto
+      height 300px
+      > .product
+        float left
+        display block
+        width 188px
+        color tiffanyBlue
+        margin 0 10px 30px 0
+        &:nth-child(5)
+          margin 0 0 30px 0
+        > img
+          height auto
+          width 100%
+          position relative
+        > .name
+          font h4
+          padding 20px 0 10px 0
+          clear both
+        > .title
+          clear both
+          font c1ss
+          width 140px
+          margin auto
+          line-height 20px
+
 
   > .details
     > .image, > .detail

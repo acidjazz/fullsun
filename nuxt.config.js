@@ -37,18 +37,16 @@ module.exports = {
       { src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" },
       { src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js" },
       { src: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js" },
-      { src: "/jquery.selz.min.js" },
 
     ],
 
     link: [
-      {rel: "stylesheet", href: "/jquery.selz.min.css"},
-      {rel: "apple-touch-icon", sizes: "180x180", href: "images/icons/apple-touch-icon.png"},
-      {rel: "icon", type: "image/png", href: "images/icons/favicon-32x32.png", sizes: "32x32"},
-      {rel: "icon", type: "image/png", href: "images/icons/favicon-16x16.png", sizes: "16x16"},
-      {rel: "manifest", href: "images/icons/manifest.json"},
-      {rel: "mask-icon", href: "images/icons/safari-pinned-tab.svg", color: "5bbad5"},
-      {rel:" shortcut,icon", href: "images/icons/favicon.ico"},
+      {rel: "apple-touch-icon", sizes: "180x180", href: "/icons/apple-touch-icon.png"},
+      {rel: "icon", type: "image/png", href: "/icons/favicon-32x32.png", sizes: "32x32"},
+      {rel: "icon", type: "image/png", href: "/icons/favicon-16x16.png", sizes: "16x16"},
+      {rel: "manifest", href: "/icons/manifest.json"},
+      {rel: "mask-icon", href: "/icons/safari-pinned-tab.svg", color: "5bbad5"},
+      {rel:" shortcut,icon", href: "/icons/favicon.ico"},
 
     ]
   },
@@ -63,7 +61,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // plugins: { src: 'node_modules/jquery.selz/dist/jquery.selz.min.js', ssr: false },
     /*
     ** Run ESLINT on save
     */
