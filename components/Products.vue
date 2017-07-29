@@ -9,27 +9,21 @@ doctype
   .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
 
   .productlist
-    .product(v-for="product, index in products",@click="select(product)")
+    a.product(v-for="product, index in products",@click="select(product)")
       .image
-        .overlay
         .inner(:style="'background-image: url(/images/products/' + product.thumb + ')'")
       .name {{ product.name }}
       .title {{ product.title }}
-
-  .clear
-  .clear
 
   .title apparel
   .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
 
   .productlist
-    .product(v-for="product, index in apparel",@click="select(product)")
+    a.product(v-for="product, index in apparel",@click="select(product)")
       .image
-        .overlay
         .inner(:style="'background-image: url(/images/products/' + product.thumb + ')'")
       .name {{ product.name }}
       .title {{ product.title }}
-  .clear
 
   .backdrop(:class="{ on: this.selected !== false, off: this.selected === false}")
     .left
@@ -170,32 +164,19 @@ json('../static/fonts.json')
   > .productlist
     width 980px
     margin auto
-    clear both
+    border 1px solid red
     > .product
-      float left
-      width 225px
+      display inline-block
+      width 180px
       height 340px
-      margin 0 10px
       text-align center
       color tiffanyBlue
       transition color 0.2s linear
-      &:hover
-        color seaBuckthorn
-        > .image > .overlay
-          opacity 1
-      cursor pointer
       > .image
-        width 225px
-        height 225px
+        width 100%
+        height auto
         box-shadow 0 1px 10px rgba(0, 0, 0, 0.1);
         position relative
-        > .overlay
-          position absolute
-          background-color rgba(seaBuckthorn, 0.3)
-          width 100%
-          height 100%
-          opacity 0
-          transition opacity 0.2s linear 0.1s
         > .inner
           background-size cover
           background-position 10%
