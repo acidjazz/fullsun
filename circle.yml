@@ -1,0 +1,28 @@
+machine:
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+  timezone:
+    America/Los_Angeles
+  node:
+    version: 8.1.2
+
+dependencies:
+  override:
+    - yarn
+
+test:
+  override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/reports
+    - nyc ava --tap | tap-xunit > $CIRCLE_TEST_REPORTS/reports/ava.xml
+  post:
+    - yarn run coverage
+
+deployment:
+  staging: 
+    branch: staging
+    commands:
+      - yarn run staging
+  production: 
+    branch: master
+    commands:
+      - yarn run production

@@ -2,7 +2,7 @@
   {
     "name": "anvil tee",
     "title": "Anvil Tee Shirt",
-    "ecwid": "88317723",
+    "selz": "EJ5u3c4I7",
     "description": [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
     ],
@@ -30,6 +30,7 @@
     ]
   },
   {
+    "selz": "NkqPOpNLX",
     "name": "cropped tee",
     "title": "Cropped Tee Shirt",
     "description": [
@@ -49,6 +50,7 @@
     ]
   },
   {
+    "selz": "4JX9pTEUQ",
     "name": "bag",
     "title": "Drawstring Bag",
     "description": [
@@ -68,6 +70,7 @@
     ]
   },
   {
+    "selz": "NyqP6aeI7",
     "name": "hat",
     "title": "Blue Hat",
     "description": [
@@ -87,6 +90,7 @@
     ]
   },
   {
+    "selz": "E1y9BpVL7",
     "name": "leggings",
     "title": "Black Leggings",
     "description": [
@@ -107,7 +111,7 @@
   },
   {
     "name": "racerback",
-    "ecwid": 88316723,
+    "selz": "VyrzwaVUm",
     "title": "California Conscious",
     "description": [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
@@ -136,6 +140,7 @@
     ]
   },
   {
+    "selz": "EyOd3TVLX",
     "name": "hoodie",
     "title": "Zip Hoodie",
     "description": [

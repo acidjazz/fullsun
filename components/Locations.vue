@@ -1,5 +1,5 @@
 <template lang="pug">
-.section.section_locations#locations
+.section.section_locations#locations(:class="{ off: $store.state.selected === true, on: $store.state.selected === false}")
   #map
   .place(:class="{ on: place !== false, off: place === false }")
     .inner
@@ -13,7 +13,6 @@
 <script>
 const jsonp = require('jsonp')
 export default {
-
   methods: {
 
     marker () {
@@ -49,6 +48,12 @@ export default {
 
   mounted () {
 
+    this.$store.watch(
+      function (state) {
+        console.log(state)
+      }
+    )
+
     if (window.google === undefined) {
       jsonp(this.url, null, () => {
 
@@ -62,6 +67,7 @@ export default {
           zoom: 7,
           styles: this.styles,
           options: this.options,
+          zIndex: 1,
         })
 
         let service = new window.google.maps.places.PlacesService(this.map)
@@ -81,6 +87,8 @@ export default {
     }
 
   },
+
+
   data () {
     return {
       map: false,
@@ -202,6 +210,10 @@ json('../static/fonts.json')
 .section_locations
   height calc(100vh - 85px)
   position relative
+  &.on
+    display block
+  &.off
+    z-index -1
   > .title
     font h1
     text-align center
@@ -217,6 +229,7 @@ json('../static/fonts.json')
   > #map
     width 100%
     height 100%
+    z-index 1
 
   > .place
     position absolute

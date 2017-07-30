@@ -1,10 +1,10 @@
 <template lang="pug">
 .container
-  Top
+  Top(@section='section()')
   Landing
   Rise
   Banner
-  Products
+  Products(ref="Products")
   Locations
   Vendors
   About
@@ -26,7 +26,12 @@ import Process from '~/components/Process.vue'
 import Contact from '~/components/Contact.vue'
 // import Footer from '~/components/Footer.vue'
 export default {
-  components: { Top, Landing, Rise, Banner, Products, Locations, Vendors, About, Process, Contact }
+  components: { Top, Landing, Rise, Banner, Products, Locations, Vendors, About, Process, Contact },
+  methods: {
+    section () {
+      this.$refs.Products.unselect()
+    }
+  }
 }
 </script>
 

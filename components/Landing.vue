@@ -1,5 +1,5 @@
 <template lang="pug">
-.section.section_top#landing
+.section.section_landing#landing
   .image
   .gradient
   .middle
@@ -34,11 +34,10 @@ export default {
 json('../static/colors.json')
 json('../static/fonts.json')
 @import '../assets/stylus/mixins.styl'
-.section_top
+.section_landing
   width 100vw
   height 100vh
   color white
-  z-index 3
   overflow hidden
   position relative
   > .image
@@ -83,7 +82,7 @@ json('../static/fonts.json')
       padding 50px 0 0 0
 
 @media all and (min-width: 1px) and (max-width: 1000px)
-  .section_top
+  .section_landing
     > .middle
       width 400px
       height 450px

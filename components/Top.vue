@@ -39,6 +39,7 @@ export default {
   methods: {
 
     section (section) {
+      this.$emit('section')
       setTimeout(() => {
         this.menu = false
         this.$('html, body').scrollTo('#' + section, {
@@ -86,7 +87,7 @@ json('../static/fonts.json')
     > .inner > .logo > .inner
       opacity 1
       transform scale(1)
-  z-index 20
+  z-index 10
   > .burger
     display none
   > .inner
@@ -101,7 +102,7 @@ json('../static/fonts.json')
       float left
       margin 13px 15px 0 0
       position relative
-      z-index 25
+      z-index 11
       cursor pointer
       &:hover > .inner > .circle
         animation gradient 1s ease infinite
@@ -173,7 +174,7 @@ json('../static/fonts.json')
   clear both
   width 40px
   height 40px
-  z-index 150
+  z-index 11
   &.off > .lines > span
     background-color tiffanyBlue
   &.off > .lines > span:nth-child(1)

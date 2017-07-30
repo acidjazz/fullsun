@@ -1,4 +1,5 @@
 <template lang="pug">
+doctype
 .section.section_products#products(:class="{ half: !apparelF, full: apparelF }")
 
   .subsection.subsection_products
@@ -7,11 +8,15 @@
 
     .productlist
       a.product(v-for="product, index in products",@click="select(product)")
-        img(:src="'/images/products/' + product.thumb ")
+        .image
+          .overlay
+          img(:src="'/images/products/' + product.thumb ")
         .name {{ product.name }}
         .title {{ product.title }}
       a.product(@click="apparelF = !apparelF")
-        img(src="/images/products/anvil_tee_thumb.jpg")
+        .image
+          .overlay
+          img(src="/images/products/anvil_tee_thumb.jpg")
         .name apparel
         .title Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
 
@@ -20,7 +25,8 @@
 
     .productlist
       a.product(v-for="product, index in apparel",@click="select(product)")
-        img(:src="'/images/products/' + product.thumb ")
+        .image
+          img(:src="'/images/products/' + product.thumb ")
         .name {{ product.name }}
         .title {{ product.title }}
 
@@ -28,57 +34,57 @@
     .left
     .right
 
-  .details(v-if="selected !== false")
-    .image(:class="{ on: this.selected !== false, off: this.selected === false}")
-      .inner(:style="'background-image: url(/images/products/' + selected.thumb + ')'")
-    .image.tag.on(
-      :class="'tag_' + flavor.tag",
-      v-if="selected.flavors"
-      v-for="flavor, index in selected.flavors")
-      .inner(
-        style="'background-image: url(/images/products/types/' + flavor.tag + '.jpg)'",
-        v-if="flavor.tag !== undefined")
+  .details(:class="{ on: selected !== false, off: selected === false}")
+    .inner
+      .image(:class="{ on: this.selected !== false, off: this.selected === false}")
+        .inner(:style="'background-image: url(/images/products/' + selected.thumb + ')'")
+      .image.tag.on(
+        :class="'tag_' + flavor.tag",
+        v-if="selected.flavors"
+        v-for="flavor, index in selected.flavors")
+        .inner(
+          style="'background-image: url(/images/products/types/' + flavor.tag + '.jpg)'",
+          v-if="flavor.tag !== undefined")
 
-    .detail(:class="{ on: this.selected !== false, off: this.selected === false}")
-      .close(@click="selected = false") &#10005;
-      .copy
-        .inner
-          .sun
-            include ../static/vector/sun.svg
-            include ../static/vector/sunb.svg
-          .name {{ selected.name }}
-          .title {{ selected.title }}
-          .description
-            p(v-for="d, index in selected.description") {{ d }}
-          .flavors(v-if="selected.flavors !== undefined")
-            .flavor(
-              v-for="flavor, index in selected.flavors",
-              :class="{ on: selectedF === flavor.name, off: selectedF !== flavor.name }",
-              @click="selectedF = (selectedF === flavor.name) ? false : flavor.name")
-              .name(:data-tag="flavor.tag",:data-thc="flavor.thc") {{ flavor.name }}
-              .description
-                p(v-for="desc in flavor.desc") {{ desc }}
-          .clear
-          .clear
-          .datas
-            .data(v-for="detail, index in selected.detail")
-              .left {{ detail.left }}
-              .right {{ detail.right }}
+      .detail(:class="{ on: this.selected !== false, off: this.selected === false}")
+        .close(@click="unselect()") &#10005;
+        .copy
+          .inner
+            .sun
+              include ../static/vector/sun.svg
+              include ../static/vector/sunb.svg
+            .name {{ selected.name }}
+            .title {{ selected.title }}
+            .description
+              p(v-for="d, index in selected.description") {{ d }}
+            .flavors(v-if="selected.flavors !== undefined")
+              .flavor(
+                v-for="flavor, index in selected.flavors",
+                :class="{ on: selectedF === flavor.name, off: selectedF !== flavor.name }",
+                @click="selectedF = (selectedF === flavor.name) ? false : flavor.name")
+                .name(:data-tag="flavor.tag",:data-thc="flavor.thc") {{ flavor.name }}
+                .description
+                  p(v-for="desc in flavor.desc") {{ desc }}
             .clear
+            .clear
+            .datas
+              .data(v-for="detail, index in selected.detail")
+                .left {{ detail.left }}
+                .right {{ detail.right }}
+              .clear
 
+            script(
+              v-if="selected.selz",
+              data-selz-t='_selz-btn-default',
+              :data-selz-b="'http://selz.co/' + selected.selz",
+              data-text='Buy it now',
+              data-selz-a='modal').
 
-          script(
-            data-selz-t='_selz-btn-default',
-            data-selz-b='http://selz.co/VyxqIJVIm',
-            data-text='Buy it now',
-            data-selz-a='modal').
+              var _$elz = {};
 
-            var _$elz = {};
-            _$elz.b = { e: document.createElement("script") };
-            _$elz.b.e.src = "https://selz.com/embed/button"; document.body.appendChild(_$elz.b.e);
+              _$elz.b = { e: document.createElement("script") };
+              _$elz.b.e.src = "https://selz.com/embed/button"; document.body.appendChild(_$elz.b.e);
 
-          noscript
-            a(href='http://selz.co/VyxqIJVIm', target='_blank') Buy it now
 </template>
 
 <script>
@@ -93,14 +99,25 @@ export default {
   methods: {
 
     select (product) {
-      this.$('html, body').scrollTo('#products', {
-        duration: 200,
-        offset: this.offset,
-      })
-      location.hash = 'products'
-
       this.selected = product
-    }
+      this.scrollOff()
+      this.$store.commit('selected', true)
+    },
+
+    unselect (product) {
+      this.selected = false
+      this.scrollOn()
+      this.$store.commit('selected', false)
+    },
+
+    scrollOff () {
+      window.$(document).bind('touchmove mousewheel', function (event) {
+        event.preventDefault()
+      })
+    },
+    scrollOn () {
+      window.$(document).unbind('touchmove mousewheel')
+    },
   },
 
   mounted () {
@@ -130,9 +147,10 @@ json('../static/fonts.json')
 
 .backdrop
   background-color white
-  position absolute
+  position fixed
   fullsize()
   onoff()
+  z-index 19
   > .left
     float left
     width 50%
@@ -145,15 +163,13 @@ json('../static/fonts.json')
     background-color springWood
 
 .section_products
-  height 700px
+  // min-height calc(100vh - 86px)
   &.half
     height 700px
   &.full
     height 1500px
-    transition height 0.5s ease-in-out 0s
   > .subsection
     onoff()
-    animation fadeIn 1s ease-in-out 0.2s both
     > .title
       font h1
       text-align center
@@ -174,20 +190,38 @@ json('../static/fonts.json')
       margin 0 auto 30px auto
       height 300px
       > .product
+        cursor pointer
         float left
         display block
         width 188px
         color tiffanyBlue
         margin 0 10px 30px 0
+        user-select none
         &:nth-child(5)
           margin 0 0 30px 0
-        > img
+        &:hover
+          > .image > .overlay
+            opacity 1
+          > .name, > .title
+            color seaBuckthorn
+        > .image
           height auto
           width 100%
+          position relative
+          > .overlay
+            position absolute
+            fullsize()
+            background-color rgba(seaBuckthorn, 0.2)
+            opacity 0
+            transition opacity 0.2s ease-in-out 0s
+          > img
+            height auto
+            width 100%
           position relative
         > .name
           font h4
           padding 20px 0 10px 0
+          transition color 0.2s ease-in-out 0s
           clear both
         > .title
           clear both
@@ -195,147 +229,157 @@ json('../static/fonts.json')
           width 140px
           margin auto
           line-height 20px
+          transition color 0.2s ease-in-out 0s
 
 
   > .details
-    > .image, > .detail
-      top 0
-      position absolute
-      width 50vw
-      height calc(100vh - 86px)
-      max-height 800px
-
-    > .image
-      left 0
-      background-color gc(white1)
-      onoff()
-      
-      > .inner
-        animation inFromLeft 0.4s ease-in-out 0.2s both
+    position fixed
+    fullsize()
+    onoff()
+    z-index 20
+    top 86px
+    > .inner
+      width 100%
+      height 100%
+      position relative
+      > .image, > .detail
+        top 0
+        position absolute
         width 50vw
         height calc(100vh - 86px)
         max-height 800px
-        background-position 50% -70px
-        background-repeat no-repeat
-        background-size cover 
-        position relative
-        float right
-        > .versions
-          position absolute
-          bottom 30px
-          left 20px
-          > .version
-            cursor pointer
-            width 30px
-            height 30px
-            float left
-            margin-left 10px
-            border 1px solid transparent
-            &.active
-              border 1px solid seaBuckthorn
-      &:nth-child(2) > .inner
-        background-position 50% -100px
-      &:nth-child(4) > .inner
-        background-position 50% -100px
-    > .detail
-      font c1s
-      right 0
-      background-color springWood
-      onoff()
-      > .close
-        cursor pointer
-        height 50px
-        width 50px
-        text-align center
-        position fixed
-        bottom 20px
-        left 50%
-        margin-left -25px
-        font h1
-        color tiffanyBlue
-      > .copy
-        text-align center
-        color tiffanyBlue
+
+      > .image
+        left 0
+        background-color gc(white1)
+        onoff()
+        
         > .inner
-          width 400px
-          height 600px
-          margin auto
-          position absolute
-          top 50%
-          right 50%
-          margin-top -300px
-          margin-right -200px
-          > .sun
-            position relative
-            width 100px
-            height 50px
-            margin auto
-            > svg > path#sunFilled
-              display none
-            > svg
-              > path
-                fill seaBuckthorn
-          > .name
-            font h4
-            padding 10px 0 0 0
-            animation inFromBottom 0.2s ease-in-out 0.3s both
-          > .title
-            padding 10px 0 0 20px 0
-            animation inFromBottom 0.2s ease-in-out 0.4s both
-          > .description
-            padding 0 0 10px 0
-            animation inFromBottom 0.2s ease-in-out 0.5s both
-            line-height 22px
-            > p
-              > b
-                font c1sb
-          > .flavors
-            animation inFromBottom 0.2s ease-in-out 0.5s both
-            margin -10px 0 60px 0
-            clear both
-            > .flavor
-              width 50%
+          animation inFromLeft 0.4s ease-in-out 0.2s both
+          width 50vw
+          height calc(100vh - 86px)
+          max-height 800px
+          background-position 50% -70px
+          background-repeat no-repeat
+          background-size cover 
+          position relative
+          float right
+          > .versions
+            position absolute
+            bottom 30px
+            left 20px
+            > .version
+              cursor pointer
+              width 30px
+              height 30px
               float left
-              &.off > .description
-                height 0px
-              &.on > .name
-                color tiffanyBlue
-                text-decoration underline
-              &.on > .description
-                height 120px
-              > .name
-                cursor pointer
-                display inline-block
-                color seaBuckthorn
-                padding 5px 0px
-                font c3
-                text-transform uppercase
-              > .description
-                overflow hidden
-                transition height 0.2s linear 0s
-                > p
-                  font c1ss
-                  &:last-child
-                    padding 5px 0 0 0
-              &:nth-child(3)
-                clear both
-          > .datas
-            border 1px solid seaBuckthorn
-            padding 10px 10px 20px 10px
-            animation inFromBottom 0.2s ease-in-out 0.6s both
-            clear both
-            > .data
-              border-bottom 1px dotted tiffanyBlue
-              padding 10px 0 20px 0
-              > .left
+              margin-left 10px
+              border 1px solid transparent
+              &.active
+                border 1px solid seaBuckthorn
+        &:nth-child(2) > .inner
+          background-position 50% -100px
+        &:nth-child(4) > .inner
+          background-position 50% -100px
+      > .detail
+        font c1s
+        right 0
+        background-color springWood
+        onoff()
+        > .close
+          cursor pointer
+          height 50px
+          width 50px
+          text-align center
+          position fixed
+          bottom 20px
+          left 50%
+          margin-left -25px
+          font h1
+          color tiffanyBlue
+        > .copy
+          text-align center
+          color tiffanyBlue
+          > .inner
+            width 400px
+            height 600px
+            margin auto
+            position absolute
+            top 50%
+            right 50%
+            margin-top -300px
+            margin-right -200px
+            > .sun
+              position relative
+              width 100px
+              height 50px
+              margin auto
+              > svg > path#sunFilled
+                display none
+              > svg
+                > path
+                  fill seaBuckthorn
+            > .name
+              font h4
+              padding 10px 0 0 0
+              animation inFromBottom 0.2s ease-in-out 0.3s both
+            > .title
+              padding 10px 0 0 20px 0
+              animation inFromBottom 0.2s ease-in-out 0.4s both
+            > .description
+              padding 0 0 10px 0
+              animation inFromBottom 0.2s ease-in-out 0.5s both
+              line-height 22px
+              > p
+                > b
+                  font c1sb
+            > .flavors
+              animation inFromBottom 0.2s ease-in-out 0.5s both
+              margin -10px 0 60px 0
+              clear both
+              > .flavor
+                width 50%
                 float left
-              > .right
-                float right
-          > a.selz-button
-            padding 30px 0 0 0
-            .selz-button__label
-              background-color seaBuckthorn !important
-              border-color seaBuckthorn !important
+                &.off > .description
+                  height 0px
+                &.on > .name
+                  color tiffanyBlue
+                  text-decoration underline
+                &.on > .description
+                  height 120px
+                > .name
+                  cursor pointer
+                  display inline-block
+                  color seaBuckthorn
+                  padding 5px 0px
+                  font c3
+                  text-transform uppercase
+                > .description
+                  overflow hidden
+                  transition height 0.2s linear 0s
+                  > p
+                    font c1ss
+                    &:last-child
+                      padding 5px 0 0 0
+                &:nth-child(3)
+                  clear both
+            > .datas
+              border 1px solid seaBuckthorn
+              padding 10px 10px 20px 10px
+              animation inFromBottom 0.2s ease-in-out 0.6s both
+              clear both
+              > .data
+                border-bottom 1px dotted tiffanyBlue
+                padding 10px 0 20px 0
+                > .left
+                  float left
+                > .right
+                  float right
+            > a.selz-button
+              padding 30px 0 0 0
+              .selz-button__label
+                background-color seaBuckthorn !important
+                border-color seaBuckthorn !important
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   .section_products
@@ -349,33 +393,30 @@ json('../static/fonts.json')
         margin 20px auto !important
 
     > .details
-      > .image
-        display none !important 
-      > .detail
+      > .inner
+        > .image
+          display none !important 
+        > .detail
 
-        position fixed
-        z-index 30
-        onoff()
-        fullsize()
-        width 100vw 
-        height 100vh
-        > .close
-          z-index 100
-          top auto
-          right auto
-          bottom 20px
-          left 50%
-          margin-left -12px
-        > .copy
-          > .inner
-              position static
-              width auto
-              height auto
-              margin 20px
-
-html#ecwid_html body#ecwid_body .ecwid .ecwid-btn--primary
-  background seaBuckthorn !important
-  animation inFromBottom 0.2s ease-in-out 0.7s both
+          position fixed
+          z-index 30
+          onoff()
+          fullsize()
+          width 100vw 
+          height 100vh
+          > .close
+            z-index 100
+            top auto
+            right auto
+            bottom 20px
+            left 50%
+            margin-left -12px
+          > .copy
+            > .inner
+                position static
+                width auto
+                height auto
+                margin 20px
 
 </style>
 
