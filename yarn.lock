@@ -2677,10 +2677,6 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-"jquery.selz@https://github.com/Selz/jquery.selz.git":
-  version "1.0.14"
-  resolved "https://github.com/Selz/jquery.selz.git#c8e6dfd85e50837c27f7ca188394c111587d5c63"
-
 js-base64@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
@@ -4387,6 +4383,10 @@ slash@^1.0.0:
 slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
+
+smoothscroll@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/smoothscroll/-/smoothscroll-0.3.0.tgz#6e79644d8449c51f29226a833a7440dae9162ed0"
 
 sntp@1.x.x:
   version "1.0.9"

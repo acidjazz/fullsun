@@ -2,6 +2,7 @@
 doctype
 .section.section_products#products(:class="{ half: !apparelF, full: apparelF }")
 
+
   .subsection.subsection_products
     .title products
     .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
@@ -13,14 +14,15 @@ doctype
           img(:src="'/images/products/' + product.thumb ")
         .name {{ product.name }}
         .title {{ product.title }}
-      a.product(@click="apparelF = !apparelF")
+      a.product(@click="toApparel()")
         .image
           .overlay
           img(src="/images/products/anvil_tee_thumb.jpg")
         .name apparel
         .title Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
 
-  .subsection.subsection_apparel(:class="{on: apparelF, off: !apparelF}")
+
+  .subsection.subsection_apparel#apparel(:class="{on: apparelF, off: !apparelF}")
     .title apparel
 
     .productlist
@@ -88,7 +90,7 @@ doctype
 </template>
 
 <script>
-
+import smoothscroll from 'smoothscroll'
 export default {
 
   created () {
@@ -97,6 +99,21 @@ export default {
   },
 
   methods: {
+
+    toApparel () {
+      if (this.apparelF === false) {
+        this.apparelF = true
+        /*
+        window.$('html, body').scrollTo('#apparel', {
+          duration: 500,
+          offset: 0
+        })
+        */
+        // document.querySelector('#apparel').scrollIntoViewIfNeeded({ behavior: 'smooth' })
+      } else {
+        this.apparelF = false
+      }
+    },
 
     select (product) {
       this.selected = product
@@ -121,6 +138,9 @@ export default {
   },
 
   mounted () {
+
+    // smoothscroll.polyfill()
+    console.log(smoothscroll)
     this.$ = window.$
     if (this.$(window).width() < 1000) {
       this.offset = 0
@@ -163,12 +183,12 @@ json('../static/fonts.json')
     background-color springWood
 
 .section_products
-  // min-height calc(100vh - 86px)
   &.half
     height 700px
   &.full
     height 1500px
   > .subsection
+    clear both
     onoff()
     > .title
       font h1
@@ -383,14 +403,17 @@ json('../static/fonts.json')
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   .section_products
-    height auto
-    max-height none
-    overflow auto
-    > .productlist
-      width auto
-      > .product
-        float none
-        margin 20px auto !important
+    &.half
+      height 1900px
+    &.full
+      height 3000px
+    > .subsection
+      > .productlist
+        width auto
+        height auto
+        > .product
+          float none
+          margin 20px auto !important
 
     > .details
       > .inner

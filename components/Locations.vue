@@ -48,12 +48,6 @@ export default {
 
   mounted () {
 
-    this.$store.watch(
-      function (state) {
-        console.log(state)
-      }
-    )
-
     if (window.google === undefined) {
       jsonp(this.url, null, () => {
 
