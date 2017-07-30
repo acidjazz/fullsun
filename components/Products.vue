@@ -36,7 +36,8 @@ doctype
     .left
     .right
 
-  .details(:class="{ on: selected !== false, off: selected === false}")
+  // .details(:class="{ on: selected !== false, off: selected === false}")
+  .details(v-if="selected")
     .inner
       .image(:class="{ on: this.selected !== false, off: this.selected === false}")
         .inner(:style="'background-image: url(/images/products/' + selected.thumb + ')'")
@@ -83,7 +84,6 @@ doctype
               data-selz-a='modal').
 
               var _$elz = {};
-
               _$elz.b = { e: document.createElement("script") };
               _$elz.b.e.src = "https://selz.com/embed/button"; document.body.appendChild(_$elz.b.e);
 
