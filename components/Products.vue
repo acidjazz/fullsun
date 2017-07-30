@@ -90,7 +90,6 @@ doctype
 </template>
 
 <script>
-import smoothscroll from 'smoothscroll'
 export default {
 
   created () {
@@ -102,14 +101,16 @@ export default {
 
     toApparel () {
       if (this.apparelF === false) {
+
         this.apparelF = true
-        /*
-        window.$('html, body').scrollTo('#apparel', {
-          duration: 500,
-          offset: 0
-        })
-        */
-        // document.querySelector('#apparel').scrollIntoViewIfNeeded({ behavior: 'smooth' })
+
+        setTimeout(() => {
+          window.$('html, body').scrollTo('#apparel', {
+            duration: 500,
+            offset: -86
+          })
+
+        }, 50)
       } else {
         this.apparelF = false
       }
@@ -139,8 +140,6 @@ export default {
 
   mounted () {
 
-    // smoothscroll.polyfill()
-    console.log(smoothscroll)
     this.$ = window.$
     if (this.$(window).width() < 1000) {
       this.offset = 0
