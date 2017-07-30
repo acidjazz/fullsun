@@ -62,7 +62,6 @@ module.exports = {
   */
   build: {
 
-    vendor: [ 'smoothscroll' ],
     /*
     ** Run ESLINT on save
     */
