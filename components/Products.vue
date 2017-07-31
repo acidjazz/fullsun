@@ -19,11 +19,12 @@ doctype
           .overlay
           img(src="/images/products/anvil_tee_thumb.jpg")
         .name apparel
-        .title Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+        .title Lorem Ipsum Lorem Ipsum
 
 
   .subsection.subsection_apparel#apparel(:class="{on: apparelF, off: !apparelF}")
     .title apparel
+    .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
 
     .productlist
       a.product(v-for="product, index in apparel",@click="select(product)")
@@ -183,9 +184,9 @@ json('../static/fonts.json')
 
 .section_products
   &.half
-    height 700px
+    height 1400px
   &.full
-    height 1500px
+    height 2700px
   > .subsection
     clear both
     onoff()
@@ -207,16 +208,14 @@ json('../static/fonts.json')
       text-align center
       width 980px
       margin 0 auto 30px auto
-      height 300px
       > .product
         cursor pointer
-        float left
-        display block
-        width 188px
+        display inline-block
+        width 300px
         color tiffanyBlue
-        margin 0 10px 30px 0
+        margin 0 40px 30px 0
         user-select none
-        &:nth-child(5)
+        &:nth-child(3n+3)
           margin 0 0 30px 0
         &:hover
           > .image > .overlay
@@ -245,7 +244,6 @@ json('../static/fonts.json')
         > .title
           clear both
           font c1ss
-          width 140px
           margin auto
           line-height 20px
           transition color 0.2s ease-in-out 0s
@@ -403,9 +401,9 @@ json('../static/fonts.json')
 @media all and (min-width: 1px) and (max-width: 1000px)
   .section_products
     &.half
-      height 1900px
+      height 2500px
     &.full
-      height 3000px
+      height 5900px
     > .subsection
       > .productlist
         width auto
