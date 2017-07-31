@@ -1,21 +1,22 @@
 [
   {
     "name": "anvil tee",
-    "title": "Anvil Tee Shirt",
+    "title": "Men’s Everyday Soft Tee",
     "selz": "EJ5u3c4I7",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      "Lightweight short sleeve t-shirt made of 100% cotton. Features a classic, durable, standard fit."
+      
     ],
     "thumb": "anvil_tee_thumb.jpg",
     "image": "anvil_tee_grey.jpg",
     "detail": [
       {
         "left": "Sizes",
-        "right": "S, M, L, XL"
+        "right": "S, M, L, XL, XXL"
       },
       {
-        "left": "colors",
-        "right": "green, black, blue"
+        "left": "Colors",
+        "right": "Grey, Black"
       }
     ],
     "versions": [
@@ -32,100 +33,86 @@
   {
     "selz": "NkqPOpNLX",
     "name": "cropped tee",
-    "title": "Cropped Tee Shirt",
+    "title": "Ladies White Crop Tee",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      "A fashion-forward cropped tee, designed in an irresistibly soft poly-cotton fabrication and a form-fitting silhouette."
     ],
     "thumb": "cropped_tee_thumb.jpg",
     "image": "cropped_tee.jpg",
     "detail": [
       {
         "left": "Sizes",
-        "right": "S, M, L, XL"
+        "right": "S, M, L"
       },
       {
-        "left": "colors",
-        "right": "green, black, blue"
+        "left": "Colors",
+        "right": "White"
       }
     ]
   },
   {
     "selz": "4JX9pTEUQ",
     "name": "bag",
-    "title": "Drawstring Bag",
+    "title": "Canvas Drawstring Bag",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      "Cotton Canvas Drawstring Backpack made of 100% cotton canvas with a matching drawcord with a size of 14\"x17\"."
     ],
     "thumb": "bag_thumb.jpg",
     "image": "bag.jpg",
     "detail": [
       {
         "left": "Sizes",
-        "right": "S, M, L, XL"
-      },
-      {
-        "left": "colors",
-        "right": "green, black, blue"
+        "right": "One size fits all."
       }
     ]
   },
   {
     "selz": "NyqP6aeI7",
     "name": "hat",
-    "title": "Blue Hat",
+    "title": "Trucker Hats",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      "One size fits all."
     ],
     "thumb": "hat_thumb.jpg",
-    "image": "hat.jpg",
-    "detail": [
-      {
-        "left": "Sizes",
-        "right": "S, M, L, XL"
-      },
-      {
-        "left": "colors",
-        "right": "green, black, blue"
-      }
-    ]
+    "image": "hat.jpg"
   },
   {
     "selz": "E1y9BpVL7",
     "name": "leggings",
-    "title": "Black Leggings",
+    "title": "Ladies Black Leggings",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      "Ideal for an active lifestyle, the women's cotton spandex legging features a form-fitted leg and fold-over wide waistband"
     ],
     "thumb": "leggings_thumb.jpg",
     "image": "leggings.jpg",
     "detail": [
       {
         "left": "Sizes",
-        "right": "S, M, L, XL"
+        "right": "S, M"
       },
       {
-        "left": "colors",
-        "right": "green, black, blue"
+        "left": "Colors",
+        "right": "Black"
       }
     ]
   },
   {
     "name": "racerback",
     "selz": "VyrzwaVUm",
-    "title": "California Conscious",
+    "title": "Ladies Midnight Blue Flowy Racerback Tank",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      "Go with the flow in this go-to tank, made from our exceptionally soft poly-viscose blend, in a flattering draped silhouette, round neck and racerback."
     ],
     "thumb": "racerback_thumb.jpg",
     "image": "racerback_front.jpg",
     "detail": [
       {
         "left": "Sizes",
-        "right": "S, M, L, XL"
+        "right": "S, M, L"
       },
       {
-        "left": "colors",
-        "right": "green, black, blue"
+        "left": "Colors",
+        "right": "Midnight Blue"
       }
     ],
     "versions": [
@@ -142,9 +129,9 @@
   {
     "selz": "EyOd3TVLX",
     "name": "hoodie",
-    "title": "Zip Hoodie",
+    "title": "Unisex Local Zip Hoodie",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      "This Unisex Terry Zip Hoodie is lightweight but warmth. The perfect grab n’ go sweatshirt or for layering under a coat."
     ],
     "thumb": "ziphoodie_thumb.jpg",
     "image": "ziphoodie.jpg",
@@ -154,8 +141,8 @@
         "right": "S, M, L, XL"
       },
       {
-        "left": "colors",
-        "right": "green, black, blue"
+        "left": "Colors",
+        "right": "Heather Grey"
       }
     ]
   }

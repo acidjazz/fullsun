@@ -24,7 +24,7 @@ doctype
 
   .subsection.subsection_apparel#apparel(:class="{on: apparelF, off: !apparelF}")
     .title apparel
-    .description All our products are 100% sungrown in Humboldt County, California. We use all-natural, responsible farming practices to yield cleaner, stronger cannabis of the highest taste, quality, and performance. 
+    .description Check out our California inspired line of everyday apparel. Perfect for lounging around or expanding your horizons, our graphic apparel collection has something for everyone.
 
     .productlist
       a.product(v-for="product, index in apparel",@click="select(product)")
@@ -71,7 +71,7 @@ doctype
                   p(v-for="desc in flavor.desc") {{ desc }}
             .clear
             .clear
-            .datas
+            .datas(v-if="selected.detail")
               .data(v-for="detail, index in selected.detail")
                 .left {{ detail.left }}
                 .right {{ detail.right }}

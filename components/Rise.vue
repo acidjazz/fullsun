@@ -38,4 +38,7 @@ json('../static/fonts.json')
       &.copy-c
         font h1
         color seaBuckthorn
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .section_rise
+    height 690px
 </style>
