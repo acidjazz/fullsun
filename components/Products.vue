@@ -19,12 +19,12 @@ doctype
           .overlay
           img(src="/images/products/anvil_tee_thumb.jpg")
         .name apparel
-        .title Lorem Ipsum Lorem Ipsum
+        .title Everyday Apparel
 
 
   .subsection.subsection_apparel#apparel(:class="{on: apparelF, off: !apparelF}")
     .title apparel
-    .description Check out our California inspired line of everyday apparel. Perfect for lounging around or expanding your horizons, our graphic apparel collection has something for everyone.
+    .description California inspired line of everyday apparel. Perfect for lounging around or expanding your horizons, our graphic apparel collection has something for everyone.
 
     .productlist
       a.product(v-for="product, index in apparel",@click="select(product)")
@@ -238,7 +238,7 @@ json('../static/fonts.json')
           position relative
         > .name
           font h4
-          padding 20px 0 10px 0
+          padding 20px 0 0 0
           transition color 0.2s ease-in-out 0s
           clear both
         > .title
@@ -276,7 +276,7 @@ json('../static/fonts.json')
           width 50vw
           height calc(100vh - 86px)
           max-height 800px
-          background-position 50% -70px
+          background-position 50% 0px
           background-repeat no-repeat
           background-size cover 
           position relative

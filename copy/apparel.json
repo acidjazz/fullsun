@@ -55,23 +55,23 @@
     "name": "bag",
     "title": "Canvas Drawstring Bag",
     "description": [
-      "Cotton Canvas Drawstring Backpack made of 100% cotton canvas with a matching drawcord with a size of 14\"x17\"."
+      "Cotton Canvas Drawstring Backpack made of 100% cotton canvas with a matching drawcord."
     ],
     "thumb": "bag_thumb.jpg",
     "image": "bag.jpg",
     "detail": [
       {
-        "left": "Sizes",
-        "right": "One size fits all."
+        "left": "Size",
+        "right": "14\" x 17\""
       }
     ]
   },
   {
-    "selz": "NyqP6aeI7",
+    "selz": "NyqP6aEI7",
     "name": "hat",
     "title": "Trucker Hats",
     "description": [
-      "One size fits all."
+      "The Two Tone Foam Trucker Hat is a constructed, 6-panel baseball cap featuring insulated mesh rear panels and a foam crown. Comes with a plastic snapback closure."
     ],
     "thumb": "hat_thumb.jpg",
     "image": "hat.jpg"
@@ -81,18 +81,18 @@
     "name": "leggings",
     "title": "Ladies Black Leggings",
     "description": [
-      "Ideal for an active lifestyle, the women's cotton spandex legging features a form-fitted leg and fold-over wide waistband"
+      "Ideal for an active lifestyle, the women's cotton spandex legging features a form-fitted leg and fold-over wide waistband."
     ],
     "thumb": "leggings_thumb.jpg",
     "image": "leggings.jpg",
     "detail": [
       {
         "left": "Sizes",
-        "right": "S, M"
+        "right": "S, M, L"
       },
       {
         "left": "Colors",
-        "right": "Black"
+        "right": "Black, Grey"
       }
     ]
   },
@@ -131,7 +131,7 @@
     "name": "hoodie",
     "title": "Unisex Local Zip Hoodie",
     "description": [
-      "This Unisex Terry Zip Hoodie is lightweight but warmth. The perfect grab n’ go sweatshirt or for layering under a coat."
+      "This Unisex Terry Zip Hoodie is lightweight but warm. The perfect grab n’ go sweatshirt or for layering under a coat."
     ],
     "thumb": "ziphoodie_thumb.jpg",
     "image": "ziphoodie.jpg",
@@ -145,5 +145,46 @@
         "right": "Heather Grey"
       }
     ]
+  },
+  {
+    "selz": "NkXslkKU7",
+    "name": "v-neck",
+    "title": "Ladies White Relaxed V-Neck Tee",
+    "description": [
+      "This tee fits like a well-loved favorite, featuring a modern slim fit and classic V-neck."
+    ],
+    "image": "vneck.jpg",
+    "thumb": "vneck_thumb.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "S, M, L, XL, XXL"
+      },
+      {
+        "left": "Colors",
+        "right": "White"
+      }
+    ]
+  },
+  {
+    "selz": "E1X7r1FUX",
+    "name": "hydrate",
+    "title": "Whole Insulated Water Bottle",
+    "description": [
+      "Double Wall 18/8 Stainless steel, thermal bottle with threaded & insulated lid for hot or cold beverages"
+    ],
+    "image": "bottle.jpg",
+    "thumb": "bottle_thumb.jpg",
+    "detail": [
+      {
+        "left": "Sizes",
+        "right": "All"
+      },
+      {
+        "left": "Colors",
+        "right": "White"
+      }
+    ]
   }
+
 ]
