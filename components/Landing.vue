@@ -80,6 +80,7 @@ json('../static/fonts.json')
       font h2
       text-transform uppercase
       padding 50px 0 0 0
+      letter-spacing 3px
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   .section_landing

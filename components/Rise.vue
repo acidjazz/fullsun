@@ -33,6 +33,7 @@ json('../static/fonts.json')
       color richGold
       max-width 860px
       margin auto
+      line-height 30px
       &.copy-b
         font c5
       &.copy-c

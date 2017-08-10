@@ -244,6 +244,11 @@ json('../static/fonts.json')
         > .title
           clear both
           font c1ss
+          font-size 12px
+          letter-spacing 1px
+          // font h3
+          // text-transform uppercase
+          // font-size 9px
           margin auto
           line-height 20px
           transition color 0.2s ease-in-out 0s
