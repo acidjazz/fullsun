@@ -5,8 +5,8 @@
   Rise
   Banner
   Products(ref="Products")
-  Locations
-  Vendors
+  //Locations
+  //Vendors
   About
   Process
   Contact

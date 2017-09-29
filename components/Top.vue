@@ -17,7 +17,7 @@
       .items(:class="{ on: menu, off: !menu }")
         .inner
           .item.item_products(data-item='products',@click="section('products')") products
-          .item.item_locations(data-item='locations',@click="section('locations')") locations
+          //.item.item_locations(data-item='locations',@click="section('locations')") locations
           .item.item_about(data-item='about',@click="section('about')") about
           .item.item_process(data-item='process',@click="section('process')") process
           .item.item_contact(data-item='contact',@click="section('contact')") contact
